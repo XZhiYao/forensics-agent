@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets — NEVER commit
+configs/.env
+*.key
+*.pem
+
+# Model weights & large data — use DVC or external storage
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.gguf
+data/
+/data/
+
+# Dataset raw files (reference paths in configs/.env)
+datasets/
+
+# Experiment outputs (tracked selectively)
+experiments/logs/
+experiments/figures/*.pdf
+
+# Observability / tracing cache
+.langsmith/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.tar
+
+# vLLM cache
+~/.cache/huggingface/

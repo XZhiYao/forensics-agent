@@ -1,0 +1,31 @@
+# docker-compose.yml
+# Implementation: Week 10 Day 2 (see ROADMAP.md)
+
+version: "3.9"
+
+services:
+  mcp-server:
+    build: .
+    command: python -m mcp_server.server
+    ports:
+      - "9000:9000"
+    env_file: configs/.env
+    restart: unless-stopped
+
+  api:
+    build: .
+    command: uvicorn api.app:app --host 0.0.0.0 --port 8080
+    ports:
+      - "8080:8080"
+    env_file: configs/.env
+    depends_on:
+      - mcp-server
+    restart: unless-stopped
+
+  # Optional: self-hosted Langfuse observability
+  # langfuse:
+  #   image: langfuse/langfuse:latest
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - DATABASE_URL=...
