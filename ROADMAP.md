@@ -67,7 +67,7 @@ Agent 的推理大脑用 Gemini（你已有，多模态强）。本地再用 vLL
 
 | 天 | 阅读材料 | 核心知识点 | 项目任务 | 产出 ☐ |
 |---|---|---|---|---|
-| D1 | 所用厂商官方 SDK quickstart（Anthropic / OpenAI / Qwen） | messages 结构、temperature、token、function calling 概念 | 搭环境，跑通首个 LLM 调用 | `hello_llm.py` ☐ |
+| D1 | 所用厂商官方 SDK quickstart（Anthropic / OpenAI / Qwen） | messages 结构、temperature、token、function calling 概念 | 搭环境，跑通首个 LLM 调用 | `hello_llm.py` ✅ |
 | D2 | Anthropic Prompt Engineering 指南 | system / user / few-shot / CoT | 为「解释篡改证据」写 system prompt + few-shot | `prompts/v0` ☐ |
 | D3 | JSON mode / Pydantic 文档 | 结构化输出、字段约束 | 让 LLM 输出 `{verdict, confidence, evidence}` | `schema.py` ☐ |
 | D4 | VLM 多模态输入文档 | base64 图像输入、视觉 token | 把图像传给 VLM 做初步真伪描述 | `vlm_describe.py` ☐ |
